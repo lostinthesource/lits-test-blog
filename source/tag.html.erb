@@ -54,6 +54,7 @@ pageable: true
         <div class="page">
             <div class="page__inner">
                 <div class="page__body">
+                    <h1><%= tagname %></h1>
                     <% page_articles.each do | article | %>
                     <div>
                         <time class="feed__item-meta-time" datetime=<%=article.date%>>

@@ -52,6 +52,8 @@ activate :blog do |blog|
   blog.paginate = true
   blog.per_page = 10
   blog.page_link = "posts/page/{num}"
+  blog.tag_template = "tag.html"
+  blog.taglink = "tags/{tag}.html"
 end
 
 # configure :development do

@@ -5,8 +5,8 @@ slug: five-years-on
 published: true
 date: 2019-08-14T17:00:00.000Z
 description: 'It''s been five years in the tech industry, so let''s reflect!'
-category: Personal
 tags:
+  - Personal
   - Career
   - Growth
 ---

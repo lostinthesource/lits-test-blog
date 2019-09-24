@@ -5,7 +5,8 @@ slug: remote-working-a-year-later
 published: true
 date: 2019-08-26T18:08:17.535Z
 description: 'I''ve been working remote for a whole year, here''s what I''ve learnt.'
-category: Professional
+tags: 
+  - Professional
 ---
 If I have my way, I'll be working remotely for a very long time, if not the rest of my life. I'm done with the traditional office set up; the open plan nature of the office, having to be social all the time, and endless meetings.
 

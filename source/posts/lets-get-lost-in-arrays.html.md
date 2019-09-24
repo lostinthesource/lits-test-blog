@@ -5,8 +5,8 @@ slug: get-lost-in-arrays
 published: true
 date: 2019-06-08T19:54:24.370Z
 description: A deep dive into Ruby Arrays.
-category: Programming
 tags:
+  - Programming
   - Ruby
   - Java
 ---

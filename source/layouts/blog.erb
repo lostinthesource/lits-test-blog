@@ -20,10 +20,10 @@
       <nav>
         <ul class="mainMenu__list">
           <li class="mainMenu__list-item__right">
-            <a  href="#">Book Office Hours</a>
+            <a  href="https://calendly.com/lolaodelola/office-hours">Book Office Hours</a>
           </li>
           <li class="mainMenu__list-item__right">
-            <a href="#">Podcast</a>
+            <a href="https://soundcloud.com/lostinthesource">Podcast</a>
           </li>
           <li class="mainMenu__list-item__right">
             <a  href="/">All Articles</a>
@@ -50,7 +50,7 @@
             <ul class="tags__list">
               <% current_page.data.tags.each do |tag| %>
                 <li class="tags__list-item">
-                  <%= link_to tag, "#", class: "tags__list-item-link" %>
+                  <%= link_to tag, tag_path(tag), class: "tags__list-item-link" %>
                 </li>
               <% end %>
             </ul>

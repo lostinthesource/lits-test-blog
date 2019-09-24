@@ -1,0 +1,649 @@
+@import "variables";
+@import "mixins";
+@import "base";
+
+// Page
+
+.page {
+  @include margin-bottom(2);
+
+  &__inner {
+    padding: 25px 20px;
+  }
+
+  &__title {
+    font-size: $typographic-base-font-size * 2.5;
+    font-weight: 600;
+    @include line-height(2);
+    @include margin-top(0);
+    @include margin-bottom(1.45);
+  }
+
+  &__body {
+    font-size: $typographic-base-font-size;
+    @include line-height(1);
+    @include margin(0, 0, 1);
+  }
+
+}
+
+@include breakpoint-sm {
+  .page {
+    lost-column: 7/12;
+
+    &__inner {
+      padding: 30px 20px;
+    }
+
+  }
+
+}
+
+@include breakpoint-md {
+  .page {
+    lost-column: 2/3;
+
+    &__inner {
+      padding: 40px 35px;
+    }
+
+  }
+
+}
+
+// Feed
+
+.feed {
+  &__item {
+    @include margin-bottom(1.25);
+
+    &:last-child {
+      @include margin-bottom(.5);
+    }
+
+    &-title {
+      font-size: $typographic-base-font-size * 1.6875;
+      @include line-height(1.5);
+      @include margin-top(0);
+      @include margin-bottom(.5);
+
+      &-link {
+        color: $color-base;
+
+        &:hover,
+        &:focus {
+          color: $color-base;
+          border-bottom: 1px solid $color-base;
+        }
+
+      }
+
+    }
+
+    &-description {
+      font-size: $typographic-base-font-size;
+      @include line-height(1);
+      @include margin-bottom(.75);
+    }
+
+    &-meta {
+      &-time {
+        font-size: $typographic-small-font-size;
+        color: $color-base;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      &-divider {
+        margin: 0 5px;
+      }
+
+      &-category {
+        &-link {
+          font-size: $typographic-small-font-size;
+          color: $color-secondary;
+          font-weight: 600;
+          text-transform: uppercase;
+
+          &:hover,
+          &:focus {
+            color: $color-primary;
+          }
+
+        }
+
+      }
+
+    }
+
+    &-readmore {
+      font-size: $typographic-base-font-size;
+      color: $color-primary;
+
+      &:hover,
+      &:focus {
+        color: $color-primary;
+        border-bottom: 1px solid $color-primary;
+      }
+
+    }
+
+  }
+
+}
+
+// Icon
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Pagination
+
+.pagination {
+  @include margin-top(2);
+  display: flex;
+
+  &__prev {
+    width: 50%;
+    text-align: left;
+
+    &-link {
+      color: $color-secondary;
+      font-size: 26px;
+      font-weight: bold;
+
+      &:hover,
+      &:focus {
+        color: $color-primary;
+      }
+
+      &--disable {
+        pointer-events: none;
+        color: lighten($color-gray, 20%);
+      }
+
+    }
+
+  }
+
+  &__next {
+    width: 50%;
+    text-align: right;
+
+    &-link {
+      color: $color-secondary;
+      font-size: 26px;
+      font-weight: bold;
+
+      &:hover,
+      &:focus {
+        color: $color-primary;
+      }
+
+      &--disable {
+        pointer-events: none;
+        color: lighten($color-gray, 20%);
+      }
+
+    }
+
+  }
+
+}
+
+// Post
+
+.post {
+  &__footer {
+    max-width: $layout-post-width;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  &__comments {
+    max-width: $layout-post-width;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  &__home-button {
+    display: block;
+    max-width: 90px;
+    height: $button-height;
+    padding: 0 24px;
+    line-height: $button-height;
+    text-align: center;
+    color: $color-base;
+    border: 1px solid $color-gray-border;
+    border-radius: $button-border-radius;
+    font-size: $typographic-base-font-size;
+    font-weight: normal;
+    margin-left: auto;
+    margin-right: auto;
+    @include margin-top(1);
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+    }
+
+  }
+
+}
+
+@include breakpoint-md {
+  .post {
+    &__footer {
+      padding: 0;
+    }
+
+    &__comments {
+      padding: 0;
+    }
+
+    &__home-button {
+      position: fixed;
+      max-width: auto;
+      margin: 0;
+      top: 30px;
+      left: 30px
+    }
+
+  }
+
+}
+
+// Author
+
+.author {
+  border-top: 1px solid $color-gray-border;
+  max-width: $layout-post-width;
+  padding-top: 20px;
+  @include line-height(1);
+  @include margin-top(1);
+  @include margin-bottom(2);
+
+  &__bio {
+    &-twitter {
+      display: block;
+      text-decoration: underline;
+    }
+  }
+}
+
+@include breakpoint-sm {
+  .author {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+// Content
+
+.content {
+  max-width: $layout-post-single-width;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  &__title {
+    font-size: $typographic-base-font-size * 2;
+    max-width: $layout-post-width;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+    text-align: center;
+    @include line-height(1.65);
+    @include margin-top(1);
+    @include margin-bottom(0)
+  }
+
+  &__body {
+    & figure {
+      @include margin-bottom(1);
+
+      & blockquote {
+        font-style: italic;
+        text-align: center;
+        margin-top: 0;
+        @include padding(1, 0);
+
+        & p {
+          max-width: $layout-post-width;
+          font-size: $typographic-base-font-size * 1.6817;
+          margin-top: 0;
+          @include margin-bottom(1);
+          @include line-height(1.5)
+        }
+
+      }
+
+    }
+
+    & a {
+      text-decoration: underline
+    }
+
+    & * {
+      max-width: $layout-post-width;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    & img {
+      max-width: 100%;
+    }
+
+  }
+
+}
+
+@include breakpoint-md {
+  .content {
+    padding: 0;
+
+    &__title {
+      font-size: $typographic-base-font-size * 3;
+      @include line-height(2.25);
+      @include margin-top(2.25);
+      @include margin-bottom(1.5)
+    }
+
+    &__body {
+      font-size: $typographic-base-font-size * 1.125;
+      @include line-height(1.125);
+      @include margin-bottom(1.125);
+
+      & p {
+        font-size: $typographic-base-font-size * 1.125;
+        @include line-height(1.125);
+        @include margin-bottom(1.125)
+      }
+
+    }
+
+  }
+
+}
+
+// Meta
+
+.meta {
+  &__date {
+    font-style: italic;
+  }
+
+}
+
+// Tags
+
+.tags {
+  @include margin-bottom(.5);
+
+  &__list {
+    list-style: none;
+    margin: 0 -10px;
+    padding: 0;
+
+    &-item {
+      display: inline-block;
+      margin: 10px 5px;
+
+      &-link {
+        display: inline-block;
+        height: $button-height;
+        padding: 0 24px;
+        line-height: $button-height;
+        border: 1px solid $color-gray-border;
+        text-decoration: none;
+        border-radius: $button-border-radius;
+        color: $color-base;
+
+        &:hover,
+        &:focus {
+          color: $color-primary;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+// Sidebar
+
+.sidebar {
+  width: 100%;
+  &__inner {
+    position: relative;
+    padding: 25px 20px 0;
+  }
+}
+
+@include breakpoint-sm {
+  .sidebar {
+    lost-column: 5/12;
+    &__inner {
+      padding: 30px 20px 0;
+      &:after {
+        background: $color-gray-border;
+        background: linear-gradient(to bottom, $color-gray-border 0%, $color-gray-border 48%, $color-white 100%);
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 540px;
+        top: 30px;
+        right: -10px;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+@include breakpoint-md {
+  .sidebar {
+    lost-column: 1/3;
+    &__inner {
+      padding: 40px;
+    }
+  }
+}
+
+// Sidebar Author
+
+.sb-author {
+  &__photo {
+    display: inline-block;
+    margin-bottom: 0;
+    background-clip: padding-box
+  }
+
+  &__photo-menu {
+    display: inline-block;
+    margin-bottom: 0;
+    background-clip: padding-box;
+    padding-top: 1rem;
+  }
+
+  &__title {
+    font-size: $typographic-base-font-size * 1.125;
+    font-weight: 600;
+    @include line-height(1.125);
+    @include margin(.5, 0, .5, 0);
+
+    &-link {
+      color: $color-base;
+
+      &:hover,
+      &:focus {
+        color: $color-base
+      }
+
+    }
+
+  }
+
+  &__subtitle {
+    color: $color-gray;
+    @include line-height(1);
+    @include margin-bottom(1)
+  }
+
+}
+
+// Contacts
+
+.contacts {
+  @include margin-bottom(1);
+
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 0;
+    flex-shrink: 0;
+    list-style: none;
+    padding: 0;
+    margin: 10px -3px;
+    width: 140px;
+
+    &-item {
+      padding: 0;
+      margin: 4px;
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      height: $button-height;
+      width: $button-height;
+      line-height: $button-height;
+      border-radius: 50%;
+      text-align: center;
+      border: 1px solid $color-gray-bg;
+
+      &-link {
+        border: 0;
+        display: flex;
+        color: $color-base;
+
+        &:hover,
+        &:focus {
+          color: $color-primary;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+// Copyrights
+
+.copyright {
+  color: lighten($color-gray, 18%);
+  font-size: $typographic-small-font-size;
+}
+
+// Menu
+
+.mainMenu {
+  &__banner {
+    min-height: 50vh;
+    background-image: url('https://lostinthesource.com/banner-66f42fb175bf80e04b6d7419dfb75326.jpg');
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    margin-top: 3rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+    margin-top: -2rem;
+
+    &-item {
+      padding: 0 2rem;
+      &__right{
+        float: right;
+      }
+
+      &-link {
+        font-size: $typographic-base-font-size;
+        color: $typographic-base-font-color;
+        font-weight: normal;
+        border: 0;
+
+        &:hover,
+        &:focus {
+          color: $color-primary;
+          border-bottom: 1px solid $color-primary;
+        }
+
+        &--active {
+          color: $color-base;
+        }
+
+      }
+
+    }
+
+  }
+}
+
+.menu {
+  @include margin-bottom(1);
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &-item {
+      padding: 0;
+      margin: 10px 0;
+
+      &-link {
+        font-size: $typographic-base-font-size;
+        color: $typographic-base-font-color;
+        font-weight: normal;
+        border: 0;
+
+        &:hover,
+        &:focus {
+          color: $color-primary;
+          border-bottom: 1px solid $color-primary;
+        }
+
+        &--active {
+          color: $color-base;
+        }
+
+      }
+
+    }
+
+  }
+
+}

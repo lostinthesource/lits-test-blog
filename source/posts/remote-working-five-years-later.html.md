@@ -2,7 +2,7 @@
 template: post
 title: 'Remote Working: 1 Year Later'
 slug: remote-working-a-year-later
-published: true
+published: false
 date: 2019-08-26T18:08:17.535Z
 description: 'I''ve been working remote for a whole year, here''s what I''ve learnt.'
 tags: 

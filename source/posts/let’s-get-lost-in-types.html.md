@@ -24,19 +24,19 @@ It’s one thing to know the words and language but it’s a whole other thing t
 
 Let’s say I want to write a method that searches for a contact in an address book when I give it the name of a contact. If the contact exists then I want to return the contact, if it doesn’t I want to put a message out to the user that says the contact doesn’t exist. I’d probably do something like
 
-![Ruby search_contacts method](/media/types_ruby_search.png " Ruby search_contacts method. I’ve explicitly returned `result` but this is unnecessary in Ruby, Ruby methods return the last thing in the method.")
+![Ruby search_contacts method](/images/uploads/types_ruby_search.png " Ruby search_contacts method. I’ve explicitly returned `result` but this is unnecessary in Ruby, Ruby methods return the last thing in the method.")
 
 Depending on which part of the condition is met, the method will either return a `Contact` or a `String` . This makes perfect sense in Ruby. This is the joy of a dynamically typed language, your method isn’t constrained by what kind of object it should return, sometimes you want to return different types in the same method.
 
 Now, when I tried to do the same thing in Java, I got errors on errors on errors. Well, actually, only one error but still.
 
-![Wrong Java implementation of searchContact method](/media/types_wrong_java.png "Wrong Java implementation of searchContact method")
+![Wrong Java implementation of searchContact method](/images/uploads/types_wrong_java.png "Wrong Java implementation of searchContact method")
 
 Java forces you to tell each method, in this case `searchContact` and each variable, `name` and `result` , what type it should return. So there, on the very first line, I’ve told it to return a `Contact` type but then I’ve said depending on which condition is met, return a `Contact` or a `String`. My program is confused, why will I give it the option of returning a `String` when I’ve already told it, it can only return a `Contact`? Don’t get me wrong, this also makes sense. I get it. However it took a minute to shift my mindset.
 
 My next question was “but how do I tell the user that the contact doesn’t exist? Returning \`null\` isn’t helpful!”, this is what a friend had to say:
 
-![whatsapp conversation with friend telling me Java won't let me get away with what Ruby does](/media/types_whatsapp.png "whatsapp conversation")
+![whatsapp conversation with friend telling me Java won't let me get away with what Ruby does](/images/uploads/types_whatsapp.png "whatsapp conversation")
 
 Jokes aside, it does spark a discussion about how to design your program and the assumptions each language allows you to make.
 
@@ -44,7 +44,7 @@ Jokes aside, it does spark a discussion about how to design your program and the
 
 So how do I solve my original problem? Java is strict but it’s not unreasonable. Java really forces you to be intentional about your methods and variables. The best way I found to solve this issue was to keep the method small and contained and take care of one thing, that is, search for a contact.
 
-![The correct Java implementation of Search method](/media/types_right_java.png "The correct Java implementation of search")
+![The correct Java implementation of Search method](/images/uploads/types_right_java.png "The correct Java implementation of search")
 
 This method either returns a `Contact` or it returns `null` , that’s it. It will never return anything else and only does that one thing, it doesn’t care about communicating back to the user, and maybe it shouldn’t. Maybe somewhere else I can have an `if null` conditional that returns a message to the user. Where in Ruby I can make my method return different types and my variables are allowed to store different types, Java forces me to ask “why?”. Why do I want to make a method return more than one type, and is it appropriate?
 

@@ -44,11 +44,14 @@ configure :build do
   activate :minify_css
   activate :minify_javascript
 end
-#
+
 activate :blog do |blog|
   blog.permalink = "blog/{title}.html"
   blog.sources = "posts/{title}.html"
   blog.layout = "blog"
+  blog.paginate = true
+  blog.per_page = 10
+  blog.page_link = "posts/page/{num}"
 end
 
 # configure :development do

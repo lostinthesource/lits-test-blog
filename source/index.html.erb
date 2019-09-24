@@ -56,12 +56,10 @@ title: Lost in the Source
     <div class="page">
       <div class="page__inner">
         <div class="page__body">
-          <h1>Recent articles</h1>
-
           <% blog.articles.each do | article | %>
             <div>
               <time class="feed__item-meta-time" datetime=<%=article.date%>>
-                <%= article.date.strftime("%d-%b-%Y") %>
+                <%= article.date.strftime("%d %B, %Y") %>
               </time>
               <span class="feed__item-meta-divider"></span>
             </div>
@@ -71,7 +69,7 @@ title: Lost in the Source
               </h2>
 
               <p class="feed__item-description">
-                <%#= article.description %>
+                <%= article.summary %>
               </p>
 
               <%= link_to 'Read more', article, class: "feed__item-readmore" %>

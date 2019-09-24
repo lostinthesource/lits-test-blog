@@ -2,7 +2,7 @@
 template: post
 title: Let's Get Lost in Arrays
 slug: get-lost-in-arrays
-draft: false
+published: true
 date: 2019-06-08T19:54:24.370Z
 description: A deep dive into Ruby Arrays.
 category: Programming
